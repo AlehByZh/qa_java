@@ -20,8 +20,8 @@ public class LionTest {
     private Feline feline;
 
     @Before
-    public void setUp() {
-        lion = new Lion(feline);
+    public void setUp() throws Exception {
+        lion = new Lion("Самец",feline);
     }
 
     @Test
@@ -33,8 +33,8 @@ public class LionTest {
 
     @Test
     public void testDoesHaveMane() throws Exception {
-        new Lion("Самец");
-        assertFalse(lion.doesHaveMane());
+        //new Lion("Самец", feline);
+        assertTrue(lion.doesHaveMane());
     }
 
     @Test
@@ -47,7 +47,7 @@ public class LionTest {
     @Test
     public void testInvalidLionSex() {
         try {
-            new Lion("");
+            new Lion("", feline);
             fail("Expected an Exception to be throw");
         } catch (Exception e) {
             assertEquals("Используйте допустимые значения пола животного - самей или самка", e.getMessage());
