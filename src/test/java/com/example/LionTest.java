@@ -33,7 +33,6 @@ public class LionTest {
 
     @Test
     public void testDoesHaveMane() throws Exception {
-        //new Lion("Самец", feline);
         assertTrue(lion.doesHaveMane());
     }
 
